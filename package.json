@@ -4,7 +4,9 @@
   "description": "Ecco i primi step Utilizzando il file in allegato, creiamo un database con MySQL Workbench Creiamo una nuova applicazione Express Colleghiamo l’app al db e verifichiamo che tutto funzioni Prepariamo una rotta index per ottenere la lista dei film Prepariamo una rotta show per ottenere i dettagli di un singolo film e le sue recensioni Bonus Inserire delle immagini nel progetto express e dunque nel db Inserire i dati di connessione al database come variabili d’ambiente Inserire le vostre API in controller Inserire le vostre rotte in un router Inserire un middleware per le rotte inesistenti Inserire un middleware per la gestione errori",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "watch": "node --env-file=.env --watch app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/EmanuelaCalderone/webapp-express#readme",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0"
   }
 }
