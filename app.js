@@ -2,6 +2,20 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//risorsa statica per le img
+app.use(express.static("public"));
+
+//middlewae per leggere il body delle richieste in JSON
+app.use(express.json());
+
+//importo il middleware che definisce il percorso delle immagini
+const imagePathMiddleware = require("./data/middlewares/imagePath");
+//uso il middleware per rendere disponibili in tutte le richieste
+app.use(imagePathMiddleware);
+
+//importo e uso la rotta dei film
+const moviesRouter = require("./routers/movies");
+app.use("/api/movies", moviesRouter);
 
 // avvio del server sulla porta specificata
 app.listen(port, () => {
