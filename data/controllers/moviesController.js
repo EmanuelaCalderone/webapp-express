@@ -11,7 +11,7 @@ function index(req, res) {
         if (err) {
             return res.status(500).json({ error: "Database query failed" });
         }
-        n
+
         //creo un nuovo array di oggetti film, mappando i risultati della query
         const movies = result.map(movie => {
             return {
