@@ -4,6 +4,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
+//importo CORS
+const cors = require('cors');
+//uso CORS
+app.use(cors({ origin: process.env.FE_APP }));
+
 //risorsa statica per le img
 app.use(express.static("public"));
 
