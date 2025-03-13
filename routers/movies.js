@@ -9,6 +9,8 @@ router.get("/", moviesController.index);
 //SHOW
 router.get("/:id", moviesController.show);
 
+//store review
+router.post('/:id/reviews', moviesController.storeReview);
 
 //esporto il modulo
 module.exports = router;
