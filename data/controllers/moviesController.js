@@ -80,10 +80,8 @@ function storeReview(req, res) {
     connection.query(insertReviewSql, [text, name, vote, id], (err, results) => {
         //gestione errore
         if (err) return res.status(500).json({ error: 'Database query failed' });
-        //in caso di successo
-        res.status(201);
-        //restituisco messaggio di conferma in formato JSON con l'id della recensione appena inserita
-        res.json({ message: 'Review added', id: results.insertId })
+        //in caso di successo; messaggio di conferma in formato JSON con l'id della recensione appena inserita
+        res.status(201).json({ message: 'Review added', id: results.insertId })
     });
 }
 
