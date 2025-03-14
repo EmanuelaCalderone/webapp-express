@@ -3,6 +3,9 @@ const router = express.Router();
 //importo il controller dei film
 const moviesController = require("../data/controllers/moviesController");
 
+//importo multer
+const upload = require("../middleware/multer");
+
 //INDEX
 router.get("/", moviesController.index);
 
