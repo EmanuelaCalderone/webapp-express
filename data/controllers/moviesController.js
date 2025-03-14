@@ -85,5 +85,34 @@ function storeReview(req, res) {
     });
 }
 
-//esporto index e show
-module.exports = { index, show, storeReview };
+//funzione per inserimento nuovo film
+function store(req, res, next) {
+    //recupero i dati dalla richiesta
+    const { title, director, genre, release_year, abstract } = req.body;
+    //gestisco il valore del nome del file creato dal middleware
+    const imageName = `${req.file.filename}`;
+
+    //creo la query per l'insert
+    const query = "INSERT INTO film (title, director, genre, release_year, abstract, image) VALUES (?, ?, ?, ?, ?, ?)";
+
+    //eseguo la query SQL per inserimento film
+    connection.query(query,
+        //passo i parametri alla query
+        [title, director, genre, release_year, abstract, imageName],
+        (err, result) => {
+            //gestione errore
+            if (err) {
+                console.log(err);
+                return next(new Error("Errore interno del server"));
+            }
+            //messaggio in caso di successo
+            res.status(201).json({
+                status: "success",
+                message: "Libro creato con successo!",
+            });
+        }
+    );
+}
+
+//esporto index, show e store
+module.exports = { index, show, storeReview, store };
