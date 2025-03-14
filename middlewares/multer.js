@@ -4,7 +4,7 @@ const multer = require("multer");
 //configuro il middleware per il salvataggio dei file
 const storage = multer.diskStorage({
 
-    destination: "./public/img/movies/",
+    destination: "./public/img/movies_cover/",
 
     filename: (req, file, cb) => {
         //genero un nome univoco per ogni file e uso data attuale per non sovrascrivere file con nome uguale

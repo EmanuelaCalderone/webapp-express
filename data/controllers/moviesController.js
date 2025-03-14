@@ -93,7 +93,7 @@ function store(req, res, next) {
     const imageName = `${req.file.filename}`;
 
     //creo la query per l'insert
-    const query = "INSERT INTO film (title, director, genre, release_year, abstract, image) VALUES (?, ?, ?, ?, ?, ?)";
+    const query = "INSERT INTO movies (title, director, genre, release_year, abstract, image) VALUES (?, ?, ?, ?, ?, ?)";
 
     //eseguo la query SQL per inserimento film
     connection.query(query,
