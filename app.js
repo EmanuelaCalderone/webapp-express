@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 //importo il middleware che definisce il percorso delle immagini
-const imagePathMiddleware = require("./data/middlewares/imagePath");
+const imagePathMiddleware = require("./middlewares/imagePath");
 //uso il middleware per rendere disponibili in tutte le richieste
 app.use(imagePathMiddleware);
 

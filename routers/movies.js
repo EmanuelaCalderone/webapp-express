@@ -4,7 +4,7 @@ const router = express.Router();
 const moviesController = require("../data/controllers/moviesController");
 
 //importo multer
-const upload = require("../middleware/multer");
+const upload = require("../middlewares/multer");
 
 //INDEX
 router.get("/", moviesController.index);
